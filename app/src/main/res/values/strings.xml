@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+    <string name="converted">converted try</string>
+    <string name="penalty">penalty</string>
+    <string name="try_">try</string>
+    <string name="reset">reset</string>
+</resources>
