@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintVertical_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/team_b_layout">
+        app:layout_constraintRight_toLeftOf="@id/team_b_layout"
+        app:layout_constraintVertical_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,30 +40,30 @@
 
             <TextView
                 android:id="@+id/score_team_a"
+                style="@style/ScoreTexts"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/ScoreTexts" />
+                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/try_team_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/try_"
-                android:onClick="addTry"/>
+                android:onClick="addTry"
+                android:text="@string/try_" />
 
             <Button
                 android:id="@+id/converted_team_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/converted"
-                android:onClick="addConvertedTry"/>
+                android:onClick="addConvertedTry"
+                android:text="@string/converted" />
 
             <Button
                 android:id="@+id/penalty_team_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/penalty"
-                android:onClick="addPenalty"/>
+                android:onClick="addPenalty"
+                android:text="@string/penalty" />
         </LinearLayout>
     </LinearLayout>
 

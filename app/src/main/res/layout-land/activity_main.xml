@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/twickenham"
+    tools:context=".MainActivity">
+
+    <!-- images and scores -->
+    <ImageView
+        android:id="@+id/team_a_image"
+        style="@style/ImageStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/shujaa_2_edit"
+        app:layout_constraintBottom_toTopOf="@id/try_team_a"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/score_team_a"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/score_team_a"
+        style="@style/ScoreTexts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/team_a_image"
+        app:layout_constraintLeft_toRightOf="@id/team_a_image"
+        app:layout_constraintRight_toLeftOf="@id/score_team_b"
+        app:layout_constraintTop_toTopOf="@id/team_a_image"/>
+
+    <TextView
+        android:id="@+id/score_team_b"
+        style="@style/ScoreTexts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/score_team_a"
+        app:layout_constraintLeft_toRightOf="@id/score_team_a"
+        app:layout_constraintRight_toLeftOf="@id/team_b_image"
+        app:layout_constraintTop_toTopOf="@id/score_team_a"/>
+
+    <ImageView
+        android:id="@+id/team_b_image"
+        style="@style/ImageStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/springboks_edit"
+        app:layout_constraintBottom_toTopOf="@id/try_team_b"
+        app:layout_constraintLeft_toRightOf="@id/score_team_b"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- try buttons -->
+    <Button
+        android:id="@+id/try_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addTry"
+        android:text="@string/try_"
+        app:layout_constraintBottom_toTopOf="@id/converted_team_a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/try_team_b"
+        app:layout_constraintTop_toBottomOf="@id/team_a_image" />
+
+    <Button
+        android:id="@+id/try_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addTry"
+        android:text="@string/try_"
+        app:layout_constraintBottom_toTopOf="@id/converted_team_b"
+        app:layout_constraintLeft_toRightOf="@id/try_team_a"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/team_b_image"
+        app:layout_constraintTop_toTopOf="@id/try_team_a"/>
+
+    <!-- Conversion buttons -->
+    <Button
+        android:id="@+id/converted_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addConvertedTry"
+        android:text="@string/converted"
+        app:layout_constraintBottom_toTopOf="@id/penalty_team_a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/converted_team_b"
+        app:layout_constraintTop_toBottomOf="@id/try_team_a" />
+
+    <Button
+        android:id="@+id/converted_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addConvertedTry"
+        android:text="@string/converted"
+        app:layout_constraintBottom_toTopOf="@id/penalty_team_b"
+        app:layout_constraintLeft_toRightOf="@id/converted_team_a"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/try_team_b"
+        app:layout_constraintTop_toTopOf="@id/converted_team_a"/>
+
+    <!-- Penalty buttons -->
+    <Button
+        android:id="@+id/penalty_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addPenalty"
+        android:text="@string/penalty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/penalty_team_b"
+        app:layout_constraintTop_toBottomOf="@id/converted_team_a" />
+
+    <Button
+        android:id="@+id/penalty_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addPenalty"
+        android:text="@string/penalty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/penalty_team_a"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/converted_team_b"
+        app:layout_constraintTop_toTopOf="@id/penalty_team_a"/>
+
+    <!-- Reset button -->
+    <Button
+        android:id="@+id/reset_scores"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetScores"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
