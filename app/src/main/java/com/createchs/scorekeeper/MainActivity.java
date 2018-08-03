@@ -7,18 +7,46 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    int scoreTeamA = 0;
-    int scoreTeamB = 0;
-//    View teamAParentView = findViewById(R.id.interactives_team_a);
-//    View teamBParentView = findViewById(R.id.interactives_team_b);
-// These views are undefined at application start. App won't start
+    private int scoreTeamA;
+    private int scoreTeamB;
+    private static final String TEAM_A = "scoreTeamA";
+    private static final String TEAM_B = "scoreTeamB";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scoreTeamA = scoreTeamB = 0;
     }
+
+    /*
+     * Restore the scores
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // set scores and update views
+        scoreTeamA = savedInstanceState.getInt(TEAM_A);
+        scoreTeamB = savedInstanceState.getInt(TEAM_B);
+        display();
+    }
+
+    /*
+     * Save current scores
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // save the current score for each team
+        outState.putInt(TEAM_A, scoreTeamA);
+        outState.putInt(TEAM_B, scoreTeamB);
+
+        super.onSaveInstanceState(outState);
+    }
+
 
     public void resetScores(View view) {
         scoreTeamA = scoreTeamB = 0;
