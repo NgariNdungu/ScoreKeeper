@@ -15,7 +15,6 @@
         android:layout_height="0dp"
         android:src="@drawable/shujaa_2_edit"
         app:layout_constraintBottom_toTopOf="@id/try_team_a"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/score_team_a"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,68 +48,69 @@
         app:layout_constraintBottom_toTopOf="@id/try_team_b"
         app:layout_constraintLeft_toRightOf="@id/score_team_b"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="2"/>
 
     <!-- try buttons -->
     <Button
         android:id="@+id/try_team_a"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addTry"
         android:text="@string/try_"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toTopOf="@id/converted_team_a"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/try_team_b"
         app:layout_constraintTop_toBottomOf="@id/team_a_image" />
 
     <Button
         android:id="@+id/try_team_b"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addTry"
         android:text="@string/try_"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toTopOf="@id/converted_team_b"
         app:layout_constraintLeft_toRightOf="@id/try_team_a"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/team_b_image"
-        app:layout_constraintTop_toTopOf="@id/try_team_a"/>
+        app:layout_constraintTop_toBottomOf="@id/team_b_image"/>
 
     <!-- Conversion buttons -->
     <Button
         android:id="@+id/converted_team_a"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addConvertedTry"
         android:text="@string/converted"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toTopOf="@id/penalty_team_a"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/converted_team_b"
         app:layout_constraintTop_toBottomOf="@id/try_team_a" />
 
     <Button
         android:id="@+id/converted_team_b"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addConvertedTry"
         android:text="@string/converted"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toTopOf="@id/penalty_team_b"
         app:layout_constraintLeft_toRightOf="@id/converted_team_a"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/try_team_b"
-        app:layout_constraintTop_toTopOf="@id/converted_team_a"/>
+        app:layout_constraintTop_toBottomOf="@id/try_team_b"/>
 
     <!-- Penalty buttons -->
     <Button
         android:id="@+id/penalty_team_a"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addPenalty"
         android:text="@string/penalty"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/penalty_team_b"
@@ -118,21 +118,20 @@
 
     <Button
         android:id="@+id/penalty_team_b"
+        style="@style/TryButtonStyleLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addPenalty"
         android:text="@string/penalty"
-        style="@style/ButtonStyleLand"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/penalty_team_a"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/converted_team_b"
-        app:layout_constraintTop_toTopOf="@id/penalty_team_a"/>
+        app:layout_constraintTop_toBottomOf="@id/converted_team_b"/>
 
     <!-- Reset button -->
     <Button
         android:id="@+id/reset_scores"
-        style="@style/ButtonStyle"
+        style="@style/ResetButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="resetScores"
