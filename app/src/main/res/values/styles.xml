@@ -39,5 +39,9 @@
         <item name="android:background">#ffffff</item>
         <item name="android:tint">#00f</item>
     </style>
+    <style name="ButtonStyleLand" parent="AppTheme">
+        <item name="android:minWidth">150dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 
 </resources>
