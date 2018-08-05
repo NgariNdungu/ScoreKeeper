@@ -44,7 +44,7 @@
     </style>
 
     <style name="ResetButtonStyle" parent="ButtonStyle">
-        <item name="android:background">#ff0000</item>
+        <item name="android:background">@color/color_reset_button</item>
         <item name="android:textColor">@color/text_color_secondary</item>
     </style>
 
